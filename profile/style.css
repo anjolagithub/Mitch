@@ -1,0 +1,50 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+$utilities: map-merge($utilities,
+        ("color": map-merge(map-get($utilities, "color"),
+                (values: map-merge(map-get(map-get($utilities, "color"), "values"),
+                        ($all-colors ),
+                    ),
+                ),
+            ),
+        ));
+
+@import "bootstrap/scss/utilities/api";
+
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 1100px;
+    /* height: 550px;
+    background-color: lightgrey; */
+}
+
+.flex-item {
+    background-color: white;
+    margin: 10px;
+}
+
+.item1 {
+    -webkit-flex: 7;
+    flex: 7;
+}
+
+.item2 {
+    -webkit-flex: 7;
+    flex: 7;
+}
+
+.item3 {
+    -webkit-flex: 1;
+    flex: 1;
+}
+.lead{
+    text-align: center;
+}
